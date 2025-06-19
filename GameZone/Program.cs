@@ -20,7 +20,7 @@
 
             builder.Services.AddScoped<ICategorieService, CategorieService>();
             builder.Services.AddScoped<IDevicesService, DevicesService>();
-
+            builder.Services.AddScoped<IGamesService, GamesService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

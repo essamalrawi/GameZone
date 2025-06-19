@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Runtime.CompilerServices;
 
 namespace GameZone.ViewModel
 {
@@ -13,7 +14,7 @@ namespace GameZone.ViewModel
         public IEnumerable<SelectListItem> Categories { get; set; } = Enumerable.Empty<SelectListItem>();
 
         [Display(Name = "Supported Devices")]
-        public List<int> SelectedDevices { get; set; } = new List<int>();
+        public List<int> SelectedDevices { get; set; } = default!;
 
         public IEnumerable<SelectListItem> Devices { get; set; } = Enumerable.Empty<SelectListItem>();
 
