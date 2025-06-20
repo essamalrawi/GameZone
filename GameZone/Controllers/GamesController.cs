@@ -17,8 +17,8 @@ namespace GameZone.Controllers
 
         public IActionResult Index()
         {
-
-            return View();
+            var games = _gamesService.GetAll();
+            return View(games);
         }
 
         [HttpGet]
