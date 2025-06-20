@@ -24,3 +24,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Start Custom Styles */
+.cover-preview {
+    border-radius: 8px;
+    max-height: 500px;
+}
+/* End Custom Styles*/
