@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameZone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250615015519_InitialCreate")]
+    [Migration("20250621161738_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -285,7 +285,7 @@ namespace GameZone.Migrations
                         .IsRequired();
 
                     b.HasOne("GameZone.Models.Game", "Game")
-                        .WithMany("Device")
+                        .WithMany("Devices")
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -302,7 +302,7 @@ namespace GameZone.Migrations
 
             modelBuilder.Entity("GameZone.Models.Game", b =>
                 {
-                    b.Navigation("Device");
+                    b.Navigation("Devices");
                 });
 #pragma warning restore 612, 618
         }
