@@ -41,7 +41,7 @@ namespace GameZone.Data
                     new Category { Id = 17, Name = "Sandbox" },
                     new Category { Id = 18, Name = "Stealth" },
                     new Category { Id = 19, Name = "Open World" },
-                    new Category { Id = 20, Name = "Educational" }
+                    new Category { Id = 20, Name = "Educational" }, 
                 });
 
             modelBuilder.Entity<Device>().HasData(new Device[]
