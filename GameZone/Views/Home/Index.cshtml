@@ -18,7 +18,7 @@
         @foreach(var game in Model)
         {
             <div class="col-lg-4 col-md-6">
-                <div class="card border-dark mb-3" style="max-width: 20rem;">
+                <a class="card border-dark  text-decoration-none rounded-3 overflow-hidden mb-3" asp-controller="Games" asp-action="Details" asp-route-id="@game.Id">
                     <div class="card-body" style="background-image: url(@($"{FileSettings.ImagesPath}/{game.Cover}")); background-size: cover; background-position: center;height: 400px;">
                         <div class="d-flex align-items-end h-100">
                             <span class="badge bg-secondary rounded-0 fs-3">@game.Category?.Name</span>
@@ -33,7 +33,7 @@
                             }
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         }
     </div>

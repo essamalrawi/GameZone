@@ -27,6 +27,16 @@ namespace GameZone.Services
                 .ToList();
         }
 
+        public Game? GetGameById(int id)
+        {
+            return _context.Games
+                .Include(g => g.Category)
+                .Include(g => g.Devices)
+                .ThenInclude(d => d.Device)
+                .AsNoTracking()
+                .SingleOrDefault(g=>g.Id == id);
+        }
+
         public async Task Create(CreateGameFormViewModel model)
         {
             var coverName = $"{Guid.NewGuid()}{Path.GetExtension(model.Cover.FileName)}";
@@ -48,7 +58,5 @@ namespace GameZone.Services
             _context.Add(game);
             _context.SaveChanges();
         }
-
-     
     }
 }
